@@ -21,8 +21,8 @@ body {
 .grocery-list {
     margin-top: 20px;
     width: 600px;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0px 0px 3px 3px #1d1c25;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0px 0px 3px 3px #153d3d;
 }
 
 .grocery-list h1 {
@@ -159,16 +159,29 @@ input[type='checkbox']:checked+.checkbox-label::after {
 
 
 @media only screen and (max-width: 500px) {
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .grocery-list{
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+
+    }
+    .grocery-list h1{
+        margin-bottom:-20px;
+    }
     .form-container {
         padding: 10px;
+        border-radius: 0;
     }
 
     .grocery-form {
-        display: flex;
+        display: grid;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: -30px 0 -15px 0;
     }
 
     .item-name-input {
@@ -182,6 +195,10 @@ input[type='checkbox']:checked+.checkbox-label::after {
         margin: 20px 0px 0px 20px;
         padding: 10px;
     }
+    input[type="text"] {
+        text-align: center;
+    }
+    
 
     input::placeholder {
         text-align: center;
@@ -193,7 +210,7 @@ input[type='checkbox']:checked+.checkbox-label::after {
     }
 
     .items-list {
-        padding: 0px 30px 0px 80px;
+        padding: 0px 20px 0px 100px;
     }
     input[type='checkbox']:checked+.checkbox-label::after {
         height: 22px;
