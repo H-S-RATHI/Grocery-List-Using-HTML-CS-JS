@@ -1,0 +1,202 @@
+:root {
+    --text-color: #ffffff;
+    --hover-color: rgb(31, 194, 162);
+    --button-color: #42e3f8;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    background: var(--button-color);
+    color: var(--text-color);
+}
+
+.form-container {
+    padding: 10px 15px 40px 15px;
+    background-color: #1d1c25;
+    border-radius: 20px 20px 0 0;
+
+}
+.grocery-list {
+    margin-top: 20px;
+    width: 600px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px 0px 3px 3px #1d1c25;
+}
+
+.grocery-list h1 {
+    display: flex;
+    justify-content: center;
+    color: var(--button-color);
+    padding-bottom: 20px;
+}
+
+.grocery-list #grocery-form {
+    display: flex;
+    justify-content: center;
+}
+
+.grocery-list input[type='text'] {
+    border-style: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.item-name-input {
+    width: 26%;
+    margin: 0px 10px 0px 10px;
+    padding: 10px;
+}
+
+.item-amount-input {
+    width: 13%;
+    margin: 0px 20px 0px 10px;
+    padding: 10px;
+}
+input::placeholder {
+    text-align: center;
+}
+input:focus::placeholder {
+    color: transparent;
+}
+
+button {
+    font-size: 15px;
+    padding: 10px 15px 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background-color: var(--button-color);
+    transition: background-color 1s;
+    transition: color 0.3s;
+    /* Add a smooth transition effect */
+}
+
+button:hover {
+    background-color: #1d1c25;
+    border: 2px solid var(--button-color);
+    color: #ffffff;
+}
+
+.items-list {
+    padding: 0px 100px 0px 100px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #2a2f36;
+}
+
+.grocery-list li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.grocery-list .item-name {
+    flex: 2;
+    margin-left: 10px;
+}
+
+.grocery-list .item-amount {
+    flex: 1;
+}
+
+.grocery-list .item-name.checked,
+.grocery-list .item-amount.checked {
+    text-decoration: line-through;
+    color: #96cdb1;
+    opacity: 0.7;
+}
+
+input[type='checkbox'].custom-checkbox {
+    display: none;
+}
+
+.checkbox-label {
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.checkbox-label::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #1d1c25;
+    left: 0;
+    border: 2px solid var(--button-color);
+    border-radius: 2px;
+}
+
+.checkbox-label::after {
+    display: none;
+}
+
+input[type='checkbox']:checked+.checkbox-label::after {
+    display: flex;
+    content: '\2713';
+    position: absolute;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #15161d;
+    left: -0.5px;
+    top: -14px;
+    background-color: var(--button-color);
+    border-radius: 2px;
+    border: 2px solid #1d1c25;
+    width: 21.5px;
+    height: 21.5px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .form-container {
+        padding: 10px;
+    }
+
+    .grocery-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: -30px 0 -15px 0;
+    }
+
+    .item-name-input {
+        width: 50%;
+        margin: 20px 0px 0px 20px;
+        padding: 10px;
+    }
+
+    .item-amount-input {
+        width: 40%;
+        margin: 20px 0px 0px 20px;
+        padding: 10px;
+    }
+
+    input::placeholder {
+        text-align: center;
+    }
+
+    .grocery-list .grocery-form button {
+        padding: 10px 15px 10px 15px;
+        margin: 20px 0px 10px 25px;
+    }
+
+    .items-list {
+        padding: 0px 30px 0px 80px;
+    }
+    input[type='checkbox']:checked+.checkbox-label::after {
+        height: 22px;
+    }
+
+}
