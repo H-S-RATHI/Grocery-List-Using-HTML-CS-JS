@@ -1,23 +1,24 @@
 :root {
     --text-color: #ffffff;
-    --hover-color: rgb(31, 194, 162);
-    --button-color: #42e3f8;
+    --hover-color: #1d1c25;
+    --main-color: #42e3f8;
 }
 
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    background: var(--button-color);
+    background: var(--main-color);
     color: var(--text-color);
 }
 
 .form-container {
     padding: 10px 15px 40px 15px;
-    background-color: #1d1c25;
+    background-color: var(--hover-color);
     border-radius: 20px 20px 0 0;
 
 }
+
 .grocery-list {
     margin-top: 20px;
     width: 600px;
@@ -28,7 +29,7 @@ body {
 .grocery-list h1 {
     display: flex;
     justify-content: center;
-    color: var(--button-color);
+    color: var(--main-color);
     padding-bottom: 20px;
 }
 
@@ -54,11 +55,17 @@ body {
     margin: 0px 20px 0px 10px;
     padding: 10px;
 }
+
 input::placeholder {
     text-align: center;
 }
+
 input:focus::placeholder {
     color: transparent;
+}
+
+input[type="text"] {
+    text-align: center;
 }
 
 button {
@@ -68,20 +75,19 @@ button {
     cursor: pointer;
     border-radius: 20px;
     border: 2px solid #000;
-    background-color: var(--button-color);
+    background-color: var(--main-color);
     transition: background-color 1s;
     transition: color 0.3s;
-    /* Add a smooth transition effect */
 }
 
 button:hover {
-    background-color: #1d1c25;
-    border: 2px solid var(--button-color);
-    color: #ffffff;
+    background-color: var(--hover-color);
+    border: 2px solid var(--main-color);
+    color: var(--text-color);
 }
 
 .items-list {
-    padding: 0px 100px 0px 100px;
+    padding: 0px 92px 0px 120px;
     font-size: 15px;
     font-weight: 500;
     background-color: #2a2f36;
@@ -128,9 +134,9 @@ input[type='checkbox'].custom-checkbox {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #1d1c25;
+    background-color: var(--hover-color);
     left: 0;
-    border: 2px solid var(--button-color);
+    border: 2px solid var(--main-color);
     border-radius: 2px;
 }
 
@@ -148,9 +154,9 @@ input[type='checkbox']:checked+.checkbox-label::after {
     color: #15161d;
     left: -0.5px;
     top: -14px;
-    background-color: var(--button-color);
+    background-color: var(--main-color);
     border-radius: 2px;
-    border: 2px solid #1d1c25;
+    border: 2px solid var(--hover-color);
     width: 21.5px;
     height: 21.5px;
     justify-content: center;
@@ -159,22 +165,19 @@ input[type='checkbox']:checked+.checkbox-label::after {
 
 
 @media only screen and (max-width: 500px) {
-    body{
-        margin: 0;
-        padding: 0;
-    }
-    .grocery-list{
-        margin: 0;
-        width: 100%;
-        border-radius: 0;
+    .grocery-list {
+        width: 90%;
 
     }
-    .grocery-list h1{
-        margin-bottom:-20px;
+
+    .grocery-list h1 {
+        margin-top: 0;
+        margin-bottom: -20px;
+        ;
     }
+
     .form-container {
         padding: 10px;
-        border-radius: 0;
     }
 
     .grocery-form {
@@ -195,10 +198,6 @@ input[type='checkbox']:checked+.checkbox-label::after {
         margin: 20px 0px 0px 20px;
         padding: 10px;
     }
-    input[type="text"] {
-        text-align: center;
-    }
-    
 
     input::placeholder {
         text-align: center;
@@ -210,8 +209,9 @@ input[type='checkbox']:checked+.checkbox-label::after {
     }
 
     .items-list {
-        padding: 0px 20px 0px 100px;
+        padding: 0px 20px 0px 30px;
     }
+
     input[type='checkbox']:checked+.checkbox-label::after {
         height: 22px;
     }
